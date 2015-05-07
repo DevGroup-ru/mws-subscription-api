@@ -1,0 +1,26 @@
+{
+  "name": "twinsen/mws-subscription-api",
+  "description": "Amazon MWS Subscription API with Composer integration",
+  "keywords": [
+    "amazon",
+    "mws",
+    "api",
+    "subscription"
+  ],
+  "homepage": "https://github.com/EliasKotlyar/mws-subscription-api",
+  "license": "GNU3",
+  "authors": [
+    {
+      "name": "Elias Kotlyar",
+      "email": "eko@hotbytes.de"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.3"
+  },
+  "autoload": {
+    "classmap": [
+      "src/"
+    ]
+  }
+}
