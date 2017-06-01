@@ -20,7 +20,7 @@
 /**
  *  @see MWSSubscriptionsService_Model
  */
-require_once dirname(__FILE__).'/../Model.php';
+require_once __DIR__ .'/../Model.php';
 
  /**
   * MWSSubscriptionsService_Model_ListSubscriptionsInput.
@@ -61,7 +61,7 @@ require_once dirname(__FILE__).'/../Model.php';
      *
      * @param string sellerId
      *
-     * @return this instance
+     * @return \MWSSubscriptionsService_Model_ListSubscriptionsInput
      */
     public function setSellerId($value)
     {
@@ -77,7 +77,7 @@ require_once dirname(__FILE__).'/../Model.php';
      */
     public function isSetSellerId()
     {
-        return !is_null($this->_fields['SellerId']['FieldValue']);
+        return null !== $this->_fields['SellerId']['FieldValue'];
     }
 
     /**
@@ -86,7 +86,7 @@ require_once dirname(__FILE__).'/../Model.php';
      * @param sellerId
      *             The new value to set
      *
-     * @return This instance
+     * @return \MWSSubscriptionsService_Model_ListSubscriptionsInput
      */
     public function withSellerId($value)
     {
@@ -110,7 +110,7 @@ require_once dirname(__FILE__).'/../Model.php';
      *
      * @param string mwsAuthToken
      *
-     * @return this instance
+     * @return \MWSSubscriptionsService_Model_ListSubscriptionsInput
      */
     public function setMWSAuthToken($value)
     {
@@ -126,7 +126,7 @@ require_once dirname(__FILE__).'/../Model.php';
      */
     public function isSetMWSAuthToken()
     {
-        return !is_null($this->_fields['MWSAuthToken']['FieldValue']);
+        return null !== $this->_fields['MWSAuthToken']['FieldValue'];
     }
 
     /**
@@ -135,7 +135,7 @@ require_once dirname(__FILE__).'/../Model.php';
      * @param mwsAuthToken
      *             The new value to set
      *
-     * @return This instance
+     * @return \MWSSubscriptionsService_Model_ListSubscriptionsInput
      */
     public function withMWSAuthToken($value)
     {
@@ -159,7 +159,7 @@ require_once dirname(__FILE__).'/../Model.php';
      *
      * @param string marketplaceId
      *
-     * @return this instance
+     * @return \MWSSubscriptionsService_Model_ListSubscriptionsInput
      */
     public function setMarketplaceId($value)
     {
@@ -175,7 +175,7 @@ require_once dirname(__FILE__).'/../Model.php';
      */
     public function isSetMarketplaceId()
     {
-        return !is_null($this->_fields['MarketplaceId']['FieldValue']);
+        return null !== $this->_fields['MarketplaceId']['FieldValue'];
     }
 
     /**
@@ -184,7 +184,7 @@ require_once dirname(__FILE__).'/../Model.php';
      * @param marketplaceId
      *             The new value to set
      *
-     * @return This instance
+     * @return \MWSSubscriptionsService_Model_ListSubscriptionsInput
      */
     public function withMarketplaceId($value)
     {

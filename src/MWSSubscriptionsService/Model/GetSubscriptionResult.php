@@ -20,7 +20,7 @@
 /**
  *  @see MWSSubscriptionsService_Model
  */
-require_once dirname(__FILE__).'/../Model.php';
+require_once __DIR__ .'/../Model.php';
 
  /**
   * MWSSubscriptionsService_Model_GetSubscriptionResult.
@@ -57,7 +57,7 @@ require_once dirname(__FILE__).'/../Model.php';
      *
      * @param MWSSubscriptionsService_Model_Subscription subscription
      *
-     * @return this instance
+     * @return \MWSSubscriptionsService_Model_GetSubscriptionResult
      */
     public function setSubscription($value)
     {
@@ -73,7 +73,7 @@ require_once dirname(__FILE__).'/../Model.php';
      */
     public function isSetSubscription()
     {
-        return !is_null($this->_fields['Subscription']['FieldValue']);
+        return null !== $this->_fields['Subscription']['FieldValue'];
     }
 
     /**
@@ -82,7 +82,7 @@ require_once dirname(__FILE__).'/../Model.php';
      * @param subscription
      *             The new value to set
      *
-     * @return This instance
+     * @return \MWSSubscriptionsService_Model_GetSubscriptionResult
      */
     public function withSubscription($value)
     {

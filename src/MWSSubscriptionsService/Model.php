@@ -32,7 +32,7 @@ abstract class MWSSubscriptionsService_Model
      */
     public function __construct($data = null)
     {
-        if (!is_null($data)) {
+        if (null !== $data) {
             if ($this->_isAssociativeArray($data)) {
                 $this->_fromAssociativeArray($data);
             } elseif ($this->_isDOMElement($data)) {
@@ -118,7 +118,7 @@ abstract class MWSSubscriptionsService_Model
                         $elements = $xpath->query("./*[local-name()='$fieldName']", $dom);
                     }
                     if ($elements->length >= 1) {
-                        require_once dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.str_replace('_', DIRECTORY_SEPARATOR, $fieldType[0]).'.php';
+                        require_once __DIR__ .DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.str_replace('_', DIRECTORY_SEPARATOR, $fieldType[0]).'.php';
                         foreach ($elements as $element) {
                             $this->_fields[$fieldName]['FieldValue'][] = new $fieldType[0]($element);
                         }
@@ -141,7 +141,7 @@ abstract class MWSSubscriptionsService_Model
                 if ($this->_isComplexType($fieldType)) {
                     $elements = $xpath->query("./*[local-name()='$fieldName']", $dom);
                     if ($elements->length == 1) {
-                        require_once dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.str_replace('_', DIRECTORY_SEPARATOR, $fieldType).'.php';
+                        require_once __DIR__ .DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.str_replace('_', DIRECTORY_SEPARATOR, $fieldType).'.php';
                         $this->_fields[$fieldName]['FieldValue'] = new $fieldType($elements->item(0));
                     }
                 } else {
@@ -192,7 +192,7 @@ abstract class MWSSubscriptionsService_Model
                             $elements = [$elements];
                         }
                         if (count($elements) >= 1) {
-                            require_once dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.str_replace('_', DIRECTORY_SEPARATOR, $fieldType[0]).'.php';
+                            require_once __DIR__ .DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.str_replace('_', DIRECTORY_SEPARATOR, $fieldType[0]).'.php';
 
                             foreach ($elements as $element) {
                                 $this->_fields[$fieldName]['FieldValue'][] = new $fieldType[0]($element);
@@ -215,7 +215,7 @@ abstract class MWSSubscriptionsService_Model
             } else {
                 if ($this->_isComplexType($fieldType)) {
                     if (array_key_exists($fieldName, $array)) {
-                        require_once dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.str_replace('_', DIRECTORY_SEPARATOR, $fieldType).'.php';
+                        require_once __DIR__ .DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.str_replace('_', DIRECTORY_SEPARATOR, $fieldType).'.php';
                         $this->_fields[$fieldName]['FieldValue'] = new $fieldType($array[$fieldName]);
                     }
                 } else {
@@ -299,7 +299,7 @@ abstract class MWSSubscriptionsService_Model
         $xml = '';
         foreach ($this->_fields as $fieldName => $field) {
             $fieldValue = $field['FieldValue'];
-            if (!is_null($fieldValue) && $field['FieldType'] != 'MWSSubscriptionsService_Model_ResponseHeaderMetadata') {
+            if (null !== $fieldValue && $field['FieldType'] != 'MWSSubscriptionsService_Model_ResponseHeaderMetadata') {
                 $fieldType = $field['FieldType'];
                 if (is_array($fieldType)) {
                     if ($fieldType[0] == 'object') {
@@ -372,7 +372,7 @@ abstract class MWSSubscriptionsService_Model
         $xml = '';
         foreach ($this->_fields as $fieldName => $field) {
             $fieldValue = $field['FieldValue'];
-            if (!is_null($fieldValue)) {
+            if (null !== $fieldValue) {
                 $fieldType = $field['FieldType'];
                 if ($fieldType[0] == '@') {
                     $xml .= ' '.$fieldName."='".$this->_escapeXML($fieldValue)."'";
@@ -415,7 +415,7 @@ abstract class MWSSubscriptionsService_Model
      */
     private function _isAssociativeArray($var)
     {
-        return is_array($var) && array_keys($var) !== range(0, sizeof($var) - 1);
+        return is_array($var) && array_keys($var) !== range(0, count($var) - 1);
     }
 
     /**
@@ -442,8 +442,8 @@ abstract class MWSSubscriptionsService_Model
         if (!is_array($var)) {
             return false;
         }
-        $sz = sizeof($var);
+        $sz = count($var);
 
-        return $sz === 0 || array_keys($var) === range(0, sizeof($var) - 1);
+        return $sz === 0 || array_keys($var) === range(0, count($var) - 1);
     }
 }

@@ -20,7 +20,7 @@
 /**
  *  @see MWSSubscriptionsService_Model
  */
-require_once dirname(__FILE__).'/../Model.php';
+require_once __DIR__ .'/../Model.php';
 
  /**
   * MWSSubscriptionsService_Model_GetServiceStatusResult.
@@ -59,7 +59,7 @@ require_once dirname(__FILE__).'/../Model.php';
      *
      * @param string status
      *
-     * @return this instance
+     * @return \MWSSubscriptionsService_Model_GetServiceStatusResult
      */
     public function setStatus($value)
     {
@@ -75,7 +75,7 @@ require_once dirname(__FILE__).'/../Model.php';
      */
     public function isSetStatus()
     {
-        return !is_null($this->_fields['Status']['FieldValue']);
+        return null !== $this->_fields['Status']['FieldValue'];
     }
 
     /**
@@ -84,7 +84,7 @@ require_once dirname(__FILE__).'/../Model.php';
      * @param status
      *             The new value to set
      *
-     * @return This instance
+     * @return \MWSSubscriptionsService_Model_GetServiceStatusResult
      */
     public function withStatus($value)
     {
@@ -108,7 +108,7 @@ require_once dirname(__FILE__).'/../Model.php';
      *
      * @param string timestamp
      *
-     * @return this instance
+     * @return \MWSSubscriptionsService_Model_GetServiceStatusResult
      */
     public function setTimestamp($value)
     {
@@ -124,7 +124,7 @@ require_once dirname(__FILE__).'/../Model.php';
      */
     public function isSetTimestamp()
     {
-        return !is_null($this->_fields['Timestamp']['FieldValue']);
+        return null !== $this->_fields['Timestamp']['FieldValue'];
     }
 
     /**
@@ -133,7 +133,7 @@ require_once dirname(__FILE__).'/../Model.php';
      * @param timestamp
      *             The new value to set
      *
-     * @return This instance
+     * @return \MWSSubscriptionsService_Model_GetServiceStatusResult
      */
     public function withTimestamp($value)
     {

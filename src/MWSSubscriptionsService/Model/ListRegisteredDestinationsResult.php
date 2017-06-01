@@ -20,7 +20,7 @@
 /**
  *  @see MWSSubscriptionsService_Model
  */
-require_once dirname(__FILE__).'/../Model.php';
+require_once __DIR__ .'/../Model.php';
 
  /**
   * MWSSubscriptionsService_Model_ListRegisteredDestinationsResult.
@@ -57,7 +57,7 @@ require_once dirname(__FILE__).'/../Model.php';
      *
      * @param MWSSubscriptionsService_Model_DestinationList destinationList
      *
-     * @return this instance
+     * @return \MWSSubscriptionsService_Model_ListRegisteredDestinationsResult
      */
     public function setDestinationList($value)
     {
@@ -73,7 +73,7 @@ require_once dirname(__FILE__).'/../Model.php';
      */
     public function isSetDestinationList()
     {
-        return !is_null($this->_fields['DestinationList']['FieldValue']);
+        return null !== $this->_fields['DestinationList']['FieldValue'];
     }
 
     /**
@@ -82,7 +82,7 @@ require_once dirname(__FILE__).'/../Model.php';
      * @param destinationList
      *             The new value to set
      *
-     * @return This instance
+     * @return \MWSSubscriptionsService_Model_ListRegisteredDestinationsResult
      */
     public function withDestinationList($value)
     {

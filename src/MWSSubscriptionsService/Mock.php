@@ -20,7 +20,7 @@
 /**
  *  @see MWSSubscriptionsService_Interface
  */
-require_once dirname(__FILE__).'/Interface.php';
+require_once __DIR__ .'/Interface.php';
 
 class MWSSubscriptionsService_Mock implements MWSSubscriptionsService_Interface
 {
@@ -40,7 +40,7 @@ class MWSSubscriptionsService_Mock implements MWSSubscriptionsService_Interface
      */
     public function createSubscription($request)
     {
-        require_once dirname(__FILE__).'/Model/CreateSubscriptionResponse.php';
+        require_once __DIR__ .'/Model/CreateSubscriptionResponse.php';
 
         return MWSSubscriptionsService_Model_CreateSubscriptionResponse::fromXML($this->_invoke('CreateSubscription'));
     }
@@ -59,7 +59,7 @@ class MWSSubscriptionsService_Mock implements MWSSubscriptionsService_Interface
      */
     public function deleteSubscription($request)
     {
-        require_once dirname(__FILE__).'/Model/DeleteSubscriptionResponse.php';
+        require_once __DIR__ .'/Model/DeleteSubscriptionResponse.php';
 
         return MWSSubscriptionsService_Model_DeleteSubscriptionResponse::fromXML($this->_invoke('DeleteSubscription'));
     }
@@ -78,7 +78,7 @@ class MWSSubscriptionsService_Mock implements MWSSubscriptionsService_Interface
      */
     public function deregisterDestination($request)
     {
-        require_once dirname(__FILE__).'/Model/DeregisterDestinationResponse.php';
+        require_once __DIR__ .'/Model/DeregisterDestinationResponse.php';
 
         return MWSSubscriptionsService_Model_DeregisterDestinationResponse::fromXML($this->_invoke('DeregisterDestination'));
     }
@@ -97,7 +97,7 @@ class MWSSubscriptionsService_Mock implements MWSSubscriptionsService_Interface
      */
     public function getSubscription($request)
     {
-        require_once dirname(__FILE__).'/Model/GetSubscriptionResponse.php';
+        require_once __DIR__ .'/Model/GetSubscriptionResponse.php';
 
         return MWSSubscriptionsService_Model_GetSubscriptionResponse::fromXML($this->_invoke('GetSubscription'));
     }
@@ -116,7 +116,7 @@ class MWSSubscriptionsService_Mock implements MWSSubscriptionsService_Interface
      */
     public function listRegisteredDestinations($request)
     {
-        require_once dirname(__FILE__).'/Model/ListRegisteredDestinationsResponse.php';
+        require_once __DIR__ .'/Model/ListRegisteredDestinationsResponse.php';
 
         return MWSSubscriptionsService_Model_ListRegisteredDestinationsResponse::fromXML($this->_invoke('ListRegisteredDestinations'));
     }
@@ -135,7 +135,7 @@ class MWSSubscriptionsService_Mock implements MWSSubscriptionsService_Interface
      */
     public function listSubscriptions($request)
     {
-        require_once dirname(__FILE__).'/Model/ListSubscriptionsResponse.php';
+        require_once __DIR__ .'/Model/ListSubscriptionsResponse.php';
 
         return MWSSubscriptionsService_Model_ListSubscriptionsResponse::fromXML($this->_invoke('ListSubscriptions'));
     }
@@ -154,7 +154,7 @@ class MWSSubscriptionsService_Mock implements MWSSubscriptionsService_Interface
      */
     public function registerDestination($request)
     {
-        require_once dirname(__FILE__).'/Model/RegisterDestinationResponse.php';
+        require_once __DIR__ .'/Model/RegisterDestinationResponse.php';
 
         return MWSSubscriptionsService_Model_RegisterDestinationResponse::fromXML($this->_invoke('RegisterDestination'));
     }
@@ -173,7 +173,7 @@ class MWSSubscriptionsService_Mock implements MWSSubscriptionsService_Interface
      */
     public function sendTestNotificationToDestination($request)
     {
-        require_once dirname(__FILE__).'/Model/SendTestNotificationToDestinationResponse.php';
+        require_once __DIR__ .'/Model/SendTestNotificationToDestinationResponse.php';
 
         return MWSSubscriptionsService_Model_SendTestNotificationToDestinationResponse::fromXML($this->_invoke('SendTestNotificationToDestination'));
     }
@@ -192,7 +192,7 @@ class MWSSubscriptionsService_Mock implements MWSSubscriptionsService_Interface
      */
     public function updateSubscription($request)
     {
-        require_once dirname(__FILE__).'/Model/UpdateSubscriptionResponse.php';
+        require_once __DIR__ .'/Model/UpdateSubscriptionResponse.php';
 
         return MWSSubscriptionsService_Model_UpdateSubscriptionResponse::fromXML($this->_invoke('UpdateSubscription'));
     }
@@ -211,7 +211,7 @@ class MWSSubscriptionsService_Mock implements MWSSubscriptionsService_Interface
      */
     public function getServiceStatus($request)
     {
-        require_once dirname(__FILE__).'/Model/GetServiceStatusResponse.php';
+        require_once __DIR__ .'/Model/GetServiceStatusResponse.php';
 
         return MWSSubscriptionsService_Model_GetServiceStatusResponse::fromXML($this->_invoke('GetServiceStatus'));
     }
@@ -220,6 +220,6 @@ class MWSSubscriptionsService_Mock implements MWSSubscriptionsService_Interface
 
     private function _invoke($actionName)
     {
-        return $xml = file_get_contents(dirname(__FILE__).'/Mock/'.$actionName.'Response.xml', /* search include path */ true);
+        return $xml = file_get_contents(__DIR__ .'/Mock/'.$actionName.'Response.xml', /* search include path */ true);
     }
 }

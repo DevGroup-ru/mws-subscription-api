@@ -20,7 +20,7 @@
 /**
  *  @see MWSSubscriptionsService_Model
  */
-require_once dirname(__FILE__).'/../Model.php';
+require_once __DIR__ .'/../Model.php';
 
  /**
   * MWSSubscriptionsService_Model_AttributeKeyValue.
@@ -75,7 +75,7 @@ require_once dirname(__FILE__).'/../Model.php';
      */
     public function isSetKey()
     {
-        return !is_null($this->_fields['Key']['FieldValue']);
+        return null !== $this->_fields['Key']['FieldValue'];
     }
 
     /**
@@ -124,7 +124,7 @@ require_once dirname(__FILE__).'/../Model.php';
      */
     public function isSetValue()
     {
-        return !is_null($this->_fields['Value']['FieldValue']);
+        return null !== $this->_fields['Value']['FieldValue'];
     }
 
     /**

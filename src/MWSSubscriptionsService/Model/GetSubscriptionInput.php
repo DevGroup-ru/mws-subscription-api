@@ -20,7 +20,7 @@
 /**
  *  @see MWSSubscriptionsService_Model
  */
-require_once dirname(__FILE__).'/../Model.php';
+require_once __DIR__ .'/../Model.php';
 
  /**
   * MWSSubscriptionsService_Model_GetSubscriptionInput.
@@ -81,7 +81,7 @@ require_once dirname(__FILE__).'/../Model.php';
      */
     public function isSetSellerId()
     {
-        return !is_null($this->_fields['SellerId']['FieldValue']);
+        return null !== $this->_fields['SellerId']['FieldValue'];
     }
 
     /**
@@ -130,7 +130,7 @@ require_once dirname(__FILE__).'/../Model.php';
      */
     public function isSetMWSAuthToken()
     {
-        return !is_null($this->_fields['MWSAuthToken']['FieldValue']);
+        return null !== $this->_fields['MWSAuthToken']['FieldValue'];
     }
 
     /**
@@ -179,7 +179,7 @@ require_once dirname(__FILE__).'/../Model.php';
      */
     public function isSetMarketplaceId()
     {
-        return !is_null($this->_fields['MarketplaceId']['FieldValue']);
+        return null !== $this->_fields['MarketplaceId']['FieldValue'];
     }
 
     /**
@@ -228,7 +228,7 @@ require_once dirname(__FILE__).'/../Model.php';
      */
     public function isSetNotificationType()
     {
-        return !is_null($this->_fields['NotificationType']['FieldValue']);
+        return null !== $this->_fields['NotificationType']['FieldValue'];
     }
 
     /**
@@ -277,7 +277,7 @@ require_once dirname(__FILE__).'/../Model.php';
      */
     public function isSetDestination()
     {
-        return !is_null($this->_fields['Destination']['FieldValue']);
+        return null !== $this->_fields['Destination']['FieldValue'];
     }
 
     /**

@@ -24,19 +24,19 @@
 class MWSSubscriptionsService_Exception extends Exception
 {
     /** @var string */
-    private $_message = null;
+    private $_message;
     /** @var int */
     private $_statusCode = -1;
     /** @var string */
-    private $_errorCode = null;
+    private $_errorCode;
     /** @var string */
-    private $_errorType = null;
+    private $_errorType;
     /** @var string */
-    private $_requestId = null;
+    private $_requestId;
     /** @var string */
-    private $_xml = null;
+    private $_xml;
 
-    private $_responseHeaderMetadata = null;
+    private $_responseHeaderMetadata;
 
     /**
      * Constructs MWSSubscriptionsService_Exception.
@@ -81,9 +81,9 @@ class MWSSubscriptionsService_Exception extends Exception
     {
         if (array_key_exists($key, $arr)) {
             return $arr[$key];
-        } else {
-            return null;
         }
+
+        return null;
     }
 
     /**

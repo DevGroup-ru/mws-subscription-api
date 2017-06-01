@@ -20,7 +20,7 @@
 /**
  *  @see MWSSubscriptionsService_Model
  */
-require_once dirname(__FILE__).'/../Model.php';
+require_once __DIR__ .'/../Model.php';
 
  /**
   * MWSSubscriptionsService_Model_ResponseMetadata.
@@ -57,7 +57,7 @@ require_once dirname(__FILE__).'/../Model.php';
      *
      * @param string requestId
      *
-     * @return this instance
+     * @return \MWSSubscriptionsService_Model_ResponseMetadata
      */
     public function setRequestId($value)
     {
@@ -73,7 +73,7 @@ require_once dirname(__FILE__).'/../Model.php';
      */
     public function isSetRequestId()
     {
-        return !is_null($this->_fields['RequestId']['FieldValue']);
+        return null !== $this->_fields['RequestId']['FieldValue'];
     }
 
     /**
@@ -82,7 +82,7 @@ require_once dirname(__FILE__).'/../Model.php';
      * @param requestId
      *             The new value to set
      *
-     * @return This instance
+     * @return \MWSSubscriptionsService_Model_ResponseMetadata
      */
     public function withRequestId($value)
     {

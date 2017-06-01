@@ -20,7 +20,7 @@
 /**
  *  @see MWSSubscriptionsService_Model
  */
-require_once dirname(__FILE__).'/../Model.php';
+require_once __DIR__ .'/../Model.php';
 
  /**
   * MWSSubscriptionsService_Model_GetServiceStatusResponse.
@@ -61,7 +61,7 @@ require_once dirname(__FILE__).'/../Model.php';
      *
      * @param MWSSubscriptionsService_Model_GetServiceStatusResult getServiceStatusResult
      *
-     * @return this instance
+     * @return \MWSSubscriptionsService_Model_GetServiceStatusResponse
      */
     public function setGetServiceStatusResult($value)
     {
@@ -77,7 +77,7 @@ require_once dirname(__FILE__).'/../Model.php';
      */
     public function isSetGetServiceStatusResult()
     {
-        return !is_null($this->_fields['GetServiceStatusResult']['FieldValue']);
+        return null !== $this->_fields['GetServiceStatusResult']['FieldValue'];
     }
 
     /**
@@ -86,7 +86,7 @@ require_once dirname(__FILE__).'/../Model.php';
      * @param getServiceStatusResult
      *             The new value to set
      *
-     * @return This instance
+     * @return \MWSSubscriptionsService_Model_GetServiceStatusResponse
      */
     public function withGetServiceStatusResult($value)
     {
@@ -110,7 +110,7 @@ require_once dirname(__FILE__).'/../Model.php';
      *
      * @param MWSSubscriptionsService_Model_ResponseMetadata responseMetadata
      *
-     * @return this instance
+     * @return \MWSSubscriptionsService_Model_GetServiceStatusResponse
      */
     public function setResponseMetadata($value)
     {
@@ -126,7 +126,7 @@ require_once dirname(__FILE__).'/../Model.php';
      */
     public function isSetResponseMetadata()
     {
-        return !is_null($this->_fields['ResponseMetadata']['FieldValue']);
+        return null !== $this->_fields['ResponseMetadata']['FieldValue'];
     }
 
     /**
@@ -135,7 +135,7 @@ require_once dirname(__FILE__).'/../Model.php';
      * @param responseMetadata
      *             The new value to set
      *
-     * @return This instance
+     * @return \MWSSubscriptionsService_Model_GetServiceStatusResponse
      */
     public function withResponseMetadata($value)
     {
@@ -159,7 +159,7 @@ require_once dirname(__FILE__).'/../Model.php';
      *
      * @param MWSSubscriptionsService_Model_ResponseHeaderMetadata responseHeaderMetadata
      *
-     * @return this instance
+     * @return \MWSSubscriptionsService_Model_GetServiceStatusResponse
      */
     public function setResponseHeaderMetadata($value)
     {
@@ -175,7 +175,7 @@ require_once dirname(__FILE__).'/../Model.php';
      */
     public function isSetResponseHeaderMetadata()
     {
-        return !is_null($this->_fields['ResponseHeaderMetadata']['FieldValue']);
+        return null !== $this->_fields['ResponseHeaderMetadata']['FieldValue'];
     }
 
     /**
@@ -184,7 +184,7 @@ require_once dirname(__FILE__).'/../Model.php';
      * @param responseHeaderMetadata
      *             The new value to set
      *
-     * @return This instance
+     * @return \MWSSubscriptionsService_Model_GetServiceStatusResponse
      */
     public function withResponseHeaderMetadata($value)
     {
@@ -208,10 +208,10 @@ require_once dirname(__FILE__).'/../Model.php';
         $response = $xpath->query("//*[local-name()='GetServiceStatusResponse']");
         if ($response->length == 1) {
             return new self(($response->item(0)));
-        } else {
-            throw new Exception('Unable to construct MWSSubscriptionsService_Model_GetServiceStatusResponse from provided XML. 
-                                  Make sure that GetServiceStatusResponse is a root element');
         }
+
+        throw new Exception('Unable to construct MWSSubscriptionsService_Model_GetServiceStatusResponse from provided XML. 
+                              Make sure that GetServiceStatusResponse is a root element');
     }
     /**
      * XML Representation for this object.

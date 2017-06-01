@@ -20,7 +20,7 @@
 /**
  *  @see MWSSubscriptionsService_Model
  */
-require_once dirname(__FILE__).'/../Model.php';
+require_once __DIR__ .'/../Model.php';
 
  /**
   * MWSSubscriptionsService_Model_Destination.
@@ -75,7 +75,7 @@ require_once dirname(__FILE__).'/../Model.php';
      */
     public function isSetDeliveryChannel()
     {
-        return !is_null($this->_fields['DeliveryChannel']['FieldValue']);
+        return null !== $this->_fields['DeliveryChannel']['FieldValue'];
     }
 
     /**
@@ -124,7 +124,7 @@ require_once dirname(__FILE__).'/../Model.php';
      */
     public function isSetAttributeList()
     {
-        return !is_null($this->_fields['AttributeList']['FieldValue']);
+        return null !== $this->_fields['AttributeList']['FieldValue'];
     }
 
     /**
