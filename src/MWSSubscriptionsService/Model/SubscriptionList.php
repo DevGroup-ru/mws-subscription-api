@@ -1,12 +1,12 @@
 <?php
 /*******************************************************************************
  * Copyright 2009-2015 Amazon Services. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * Licensed under the Apache License, Version 2.0 (the "License");
  *
- * You may not use this file except in compliance with the License. 
+ * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at: http://aws.amazon.com/apache2.0
- * This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR 
- * CONDITIONS OF ANY KIND, either express or implied. See the License for the 
+ * This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  *******************************************************************************
  * PHP Version 5
@@ -20,42 +20,39 @@
 /**
  *  @see MWSSubscriptionsService_Model
  */
+require_once dirname(__FILE__).'/../Model.php';
 
-require_once (dirname(__FILE__) . '/../Model.php');
-
-
-/**
- * MWSSubscriptionsService_Model_SubscriptionList
- * 
- * Properties:
- * <ul>
- * 
- * <li>member: array</li>
- *
- * </ul>
- */
-
- class MWSSubscriptionsService_Model_SubscriptionList extends MWSSubscriptionsService_Model {
-
-    public function __construct($data = null)
-    {
-    $this->_fields = array (
-    'member' => array('FieldValue' => array(), 'FieldType' => array('MWSSubscriptionsService_Model_Subscription')),
-    );
-    parent::__construct($data);
-    }
+ /**
+  * MWSSubscriptionsService_Model_SubscriptionList.
+  *
+  * Properties:
+  * <ul>
+  *
+  * <li>member: array</li>
+  *
+  * </ul>
+  */
+ class MWSSubscriptionsService_Model_SubscriptionList extends MWSSubscriptionsService_Model
+ {
+     public function __construct($data = null)
+     {
+         $this->_fields = [
+    'member' => ['FieldValue' => [], 'FieldType' => ['MWSSubscriptionsService_Model_Subscription']],
+    ];
+         parent::__construct($data);
+     }
 
     /**
      * Get the value of the member property.
      *
-     * @return List<Subscription> member.
+     * @return List<Subscription> member
      */
     public function getmember()
     {
-        if ($this->_fields['member']['FieldValue'] == null)
-        {
-            $this->_fields['member']['FieldValue'] = array();
+        if ($this->_fields['member']['FieldValue'] == null) {
+            $this->_fields['member']['FieldValue'] = [];
         }
+
         return $this->_fields['member']['FieldValue'];
     }
 
@@ -63,14 +60,16 @@ require_once (dirname(__FILE__) . '/../Model.php');
      * Set the value of the member property.
      *
      * @param array member
+     *
      * @return this instance
      */
     public function setmember($value)
     {
         if (!$this->_isNumericArray($value)) {
-            $value = array ($value);
+            $value = [$value];
         }
         $this->_fields['member']['FieldValue'] = $value;
+
         return $this;
     }
 
@@ -79,34 +78,33 @@ require_once (dirname(__FILE__) . '/../Model.php');
      */
     public function unsetmember()
     {
-        $this->_fields['member']['FieldValue'] = array();
+        $this->_fields['member']['FieldValue'] = [];
     }
 
     /**
      * Check to see if member is set.
      *
-     * @return true if member is set.
+     * @return true if member is set
      */
     public function isSetmember()
     {
-                return !empty($this->_fields['member']['FieldValue']);
-            }
+        return !empty($this->_fields['member']['FieldValue']);
+    }
 
     /**
      * Add values for member, return this.
      *
      * @param member
-     *             New values to add.
+     *             New values to add
      *
-     * @return This instance.
+     * @return This instance
      */
     public function withmember()
     {
-        foreach (func_get_args() as $member)
-        {
+        foreach (func_get_args() as $member) {
             $this->_fields['member']['FieldValue'][] = $member;
         }
+
         return $this;
     }
-
-}
+ }
