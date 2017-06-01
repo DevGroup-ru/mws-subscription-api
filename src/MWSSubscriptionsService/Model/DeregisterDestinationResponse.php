@@ -147,7 +147,7 @@ require_once __DIR__ .'/../Model.php';
     /**
      * Get the value of the ResponseHeaderMetadata property.
      *
-     * @return ResponseHeaderMetadata ResponseHeaderMetadata
+     * @return string ResponseHeaderMetadata ResponseHeaderMetadata
      */
     public function getResponseHeaderMetadata()
     {

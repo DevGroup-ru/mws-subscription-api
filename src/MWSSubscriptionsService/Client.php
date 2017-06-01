@@ -617,7 +617,7 @@ class MWSSubscriptionsService_Client implements MWSSubscriptionsService_Interfac
     private function setUserAgentHeader(
         $applicationName,
         $applicationVersion,
-        $attributes = null)
+        $attributes = [])
     {
         if (null === $attributes) {
             $attributes = [];
@@ -750,6 +750,8 @@ class MWSSubscriptionsService_Client implements MWSSubscriptionsService_Interfac
 
     /**
      * Invoke request and return response.
+     *
+     * @throws \MWSSubscriptionsService_Exception
      */
     private function _invoke(array $parameters)
     {
@@ -781,6 +783,9 @@ class MWSSubscriptionsService_Client implements MWSSubscriptionsService_Interfac
             require_once __DIR__ .'/Exception.php';
             throw new MWSSubscriptionsService_Exception(['Exception' => $t, 'Message' => $t->getMessage()]);
         }
+        return [
+
+        ];
     }
 
     /**
@@ -812,6 +817,8 @@ class MWSSubscriptionsService_Client implements MWSSubscriptionsService_Interfac
 
     /**
      * Perform HTTP post with exponential retries on error 500 and 503.
+     *
+     * @throws \MWSSubscriptionsService_Exception
      */
     private function _httpPost(array $parameters)
     {
@@ -840,7 +847,7 @@ class MWSSubscriptionsService_Client implements MWSSubscriptionsService_Interfac
         foreach ($allHeaders as $name => $val) {
             $str = $name.': ';
             if (isset($val)) {
-                $str = $str.$val;
+                $str .= $val;
             }
             $allHeadersStr[] = $str;
         }
@@ -895,6 +902,8 @@ class MWSSubscriptionsService_Client implements MWSSubscriptionsService_Interfac
      * This method will throw away extra response status lines and attempt to find the first full response headers and body
      *
      * return [status, body, ResponseHeaderMetadata]
+     *
+     * @throws \MWSSubscriptionsService_Exception
      */
     private function _extractHeadersAndBody($response)
     {
@@ -977,7 +986,7 @@ class MWSSubscriptionsService_Client implements MWSSubscriptionsService_Interfac
             $keyValue = explode(': ', $currentHeader);
             if (isset($keyValue[1])) {
                 list($key, $value) = $keyValue;
-                if (isset($headers[$key]) && $headers[$key] !== null) {
+                if (isset($headers[$key])) {
                     $headers[$key] = $headers[$key].','.$value;
                 } else {
                     $headers[$key] = $value;
@@ -1010,7 +1019,7 @@ class MWSSubscriptionsService_Client implements MWSSubscriptionsService_Interfac
     /**
      * Exponential sleep on failed request.
      *
-     * @param int retries current retry
+     * @param $retries int current retry
      */
     private function _pauseOnRetry($retries)
     {
@@ -1082,6 +1091,8 @@ class MWSSubscriptionsService_Client implements MWSSubscriptionsService_Interfac
      *       Parameter names are separated from their values by the '=' character
      *       (ASCII character 61), even if the value is empty.
      *       Pairs of parameter and values are separated by the '&' character (ASCII code 38).
+     *
+     * @throws \Exception
      */
     private function _signParameters(array $parameters, $key)
     {
@@ -1133,6 +1144,8 @@ class MWSSubscriptionsService_Client implements MWSSubscriptionsService_Interfac
 
     /**
      * Computes RFC 2104-compliant HMAC signature.
+     *
+     * @throws \Exception
      */
     private function _sign($data, $key, $algorithm)
     {

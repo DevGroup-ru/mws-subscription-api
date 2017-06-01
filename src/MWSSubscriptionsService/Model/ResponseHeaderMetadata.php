@@ -1,12 +1,12 @@
 <?php
 /*******************************************************************************
  * Copyright 2009-2015 Amazon Services. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * Licensed under the Apache License, Version 2.0 (the "License");
  *
- * You may not use this file except in compliance with the License. 
+ * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at: http://aws.amazon.com/apache2.0
- * This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR 
- * CONDITIONS OF ANY KIND, either express or implied. See the License for the 
+ * This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  *******************************************************************************
  * PHP Version 5
@@ -54,7 +54,7 @@ class MWSSubscriptionsService_Model_ResponseHeaderMetadata {
    * Gets the max quota allowed for a quota period
    * (from the x-mws-quota-max header)
    *
-   * @return the max quota allowed for a quota period
+   * @return string the max quota allowed for a quota period
    */
   public function getQuotaMax() {
     return $this->metadata[self::QUOTA_MAX];
@@ -64,7 +64,7 @@ class MWSSubscriptionsService_Model_ResponseHeaderMetadata {
    * Gets the quota remaining within this quota period
    * (from the x-mws-quota-remaining header)
    *
-   * @return the quota remaining within this quota period
+   * @return string the quota remaining within this quota period
    */
   public function getQuotaRemaining() {
     return $this->metadata[self::QUOTA_REMAINING];
@@ -74,14 +74,14 @@ class MWSSubscriptionsService_Model_ResponseHeaderMetadata {
    * Gets the time that this quota period ends
    * (from the x-mws-quota-resetsOn header)
    *
-   * @return the time that this quota period ends
+   * @return string the time that this quota period ends
    */
   public function getQuotaResetsAt() {
     return $this->metadata[self::QUOTA_RESETS_AT];
   }
 
   public function __toString() {
-    return "RequestId: " . $this->getRequestId() . ", ResponseContext: " . $this->getResponseContext() . 
+    return "RequestId: " . $this->getRequestId() . ", ResponseContext: " . $this->getResponseContext() .
       ", Timestamp: " . $this->getTimestamp() . ", Quota Max: " . $this->getQuotaMax() .
       ", Quota Remaining: " . $this->getQuotaRemaining() . ", Quota Resets At: " . $this->getQuotaResetsAt();
   }

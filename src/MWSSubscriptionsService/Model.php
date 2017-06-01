@@ -262,7 +262,8 @@ abstract class MWSSubscriptionsService_Model
                 $itemPrefix = $prefix;
             }
 
-            for ($i = 1; $i <= count($fieldValue); ++$i) {
+            $iMax = count($fieldValue);
+            for ($i = 1; $i <= $iMax; ++$i) {
                 $indexedPrefix = $itemPrefix.$i.'.';
                 $memberType = $fieldType[0];
                 $arr = array_merge($arr,
@@ -403,7 +404,7 @@ abstract class MWSSubscriptionsService_Model
      */
     private function _isComplexType($fieldType)
     {
-        return preg_match('/^MWSSubscriptionsService_/', $fieldType);
+        return strpos($fieldType, 'MWSSubscriptionsService_') === 0;
     }
 
     /**
