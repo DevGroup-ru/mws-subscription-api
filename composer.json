@@ -1,5 +1,5 @@
 {
-  "name": "twinsen/mws-subscription-api",
+  "name": "devgroup/mws-subscription-api",
   "description": "Amazon MWS Subscription API with Composer integration",
   "keywords": [
     "amazon",
@@ -13,10 +13,14 @@
     {
       "name": "Elias Kotlyar",
       "email": "elias.kotlyar@gmail.com"
+    },
+    {
+      "name": "Alexander Kozhevnikov",
+      "email": "b37hr3z3n@gmail.com"
     }
   ],
   "require": {
-    "php": ">=5.3.3"
+    "php": ">=5.6"
   },
   "autoload": {
     "classmap": [
